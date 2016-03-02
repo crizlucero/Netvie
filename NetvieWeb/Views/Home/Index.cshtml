@@ -1,10 +1,31 @@
 ﻿@{
     ViewBag.Title = "Netvie";
+    string peliculas = "";
 }
 
+@Styles.Render("~/Content/Novedades.css")
+@Scripts.Render("~/Scripts/Novedades.js")
 
-<div class="peliculas">
-    <img width="50" height="75" src="#"/>
-    <span class="caption">Nombre</span>
-    <span class="estrellas">estrellas</span>
+<div id="Novedades" class="NodoSeries">
+    <h2>Novedades</h2>
+    <span class="Prev">
+        <img src="~/Images/left-arrow.png" />
+    </span>
+    <div class="SeriePeliculas">
+        <ul class="Lista">
+            <!--@foreach (var pelicula in peliculas)
+            {
+                <li class="item">
+                    <a href="~/User/Pelicula?idpelicula=@pelicula.id_pelicula">
+                        <img src="~/Images/Imagenes/@pelicula.imagen" height="140" />
+                        <span>@pelicula.titulo_esp</span>
+                    </a>
+                </li>
+            }
+                -->
+        </ul>
+    </div>
+    <span class="Next">
+        <img src="~/Images/right-arrow.png" />
+    </span>
 </div>
