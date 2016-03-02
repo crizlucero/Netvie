@@ -1,0 +1,30 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.peliculas {
+    vertical-align:top;
+    width:auto;
+    display:inline-block;
+    text-align:center;
+    height: 100px;
+}
+
+.peliculas:hover .estrellas{
+    display:block;
+}
+
+.caption {
+    display:block;
+}
+
+.estrellas{
+    display:none;
+}
