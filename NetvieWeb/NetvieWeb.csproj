@@ -196,26 +196,24 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Comentario.cs" />
+    <Compile Include="Models\Comentarios.cs" />
     <Compile Include="Models\Genero.cs" />
     <Compile Include="Models\Clasificacion.cs" />
     <Compile Include="Models\DatosGenerales.cs" />
     <Compile Include="Models\DBConnection.cs" />
     <Compile Include="Models\Generos.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Pais.cs" />
     <Compile Include="Models\Pelicula.cs" />
     <Compile Include="Models\Peliculas.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\PersonaPelicula.cs" />
-    <Compile Include="Models\PersonaVioPelicula.cs" />
+    <Compile Include="Models\Personas.cs" />
+    <Compile Include="Models\UsuarioVioPelicula.cs" />
     <Compile Include="Models\Premio.cs" />
     <Compile Include="Models\Premios.cs" />
     <Compile Include="Models\Usuario.cs" />
