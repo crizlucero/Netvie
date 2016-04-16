@@ -1,7 +1,8 @@
-﻿@{
+﻿@model NetvieWeb.Models.Peliculas
+
+@{
     ViewBag.Title = "Netvie";
-    string peliculas = "";
-}
+}       
 
 @Styles.Render("~/Content/Novedades.css")
 @Scripts.Render("~/Scripts/Novedades.js")
@@ -13,16 +14,15 @@
     </span>
     <div class="SeriePeliculas">
         <ul class="Lista">
-            <!--@foreach (var pelicula in peliculas)
+            @foreach (NetvieWeb.Models.Pelicula pelicula in Model)
             {
                 <li class="item">
-                    <a href="~/User/Pelicula?idpelicula=@pelicula.id_pelicula">
-                        <img src="~/Images/Imagenes/@pelicula.imagen" height="140" />
-                        <span>@pelicula.titulo_esp</span>
+                    <a href="~/User/Pelicula?idpelicula=@pelicula.idPelicula">
+                        <img src="~/Images/Imagenes/@pelicula.Imagen" height="140" />
+                        <span>@pelicula.TituloEsp</span>
                     </a>
                 </li>
             }
-                -->
         </ul>
     </div>
     <span class="Next">

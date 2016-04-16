@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using NetvieWeb.Models;
 using System.Web.Mvc;
 
 namespace NetvieWeb.Controllers
 {
     public class HomeController : Controller
     {
+
+
         public ActionResult Index()
         {
-            return View();
+
+            Peliculas model = (new Peliculas()).GetPeliculas() ;
+            
+
+            return View(model);
         }
 
         public ActionResult About()
