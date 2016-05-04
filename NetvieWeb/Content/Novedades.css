@@ -53,12 +53,12 @@
     }
 
 .SeriePeliculas {
-    display: inline-block;
+    /*display: inline-block;*/
     overflow: hidden;
     overflow-x: auto;
-    min-width: 500px;
+    /*min-width: 500px;
     max-width: 500px;
-    height: 200px;
+    height: 200px;*/
 }
 
     .SeriePeliculas:hover {
@@ -69,11 +69,11 @@
 
 .Lista {
     list-style: none;
-    width: 100%;
+    width: auto;
     margin-left:-30px;
 }
 
 .item {
     display: inline-block;
-    width: 80px;
+    width: 150px;
 }

@@ -3,13 +3,13 @@ using System;
 
 namespace NetvieWeb.Models
 {
-    class Usuario : DatosGenerales
+    public class Usuario : DatosGenerales
     {
-        string Correo { get; set; }
-        string Password { get; set; }
-        DateTime Ingreso { get; set; }
-        string Tipo { get; set; }
-        int Estatus { get; set; }
+        public string Correo { get; set; }
+        public string Password { get; set; }
+        public DateTime Ingreso { get; set; }
+        public string Tipo { get; set; }
+        public int Estatus { get; set; }
         /// <summary>
         /// Busca los datos para el inicio de sesión
         /// </summary>

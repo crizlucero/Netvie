@@ -1,4 +1,5 @@
 ﻿using NetvieWeb.Models;
+using System;
 using System.Web.Mvc;
 
 namespace NetvieWeb.Controllers
@@ -10,9 +11,17 @@ namespace NetvieWeb.Controllers
         public ActionResult Index()
         {
 
-            Peliculas model = (new Peliculas()).GetPeliculas() ;
-            
+            Peliculas model = (new Peliculas()).GetPeliculas();
 
+
+            return View(model);
+        }
+
+        public ActionResult Pelicula()
+        {
+            Pelicula model = (new Pelicula()).GetPelicula(Convert.ToInt32(Request["idpelicula"]));
+            if (Session["idusuario"] != null)
+                (new UsuarioVioPelicula()).PeliculaVista(Convert.ToInt32(Request["idpelicula"]), Convert.ToInt32(Session["idusuario"]));
             return View(model);
         }
 

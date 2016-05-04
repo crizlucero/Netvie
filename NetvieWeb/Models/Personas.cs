@@ -16,7 +16,7 @@ namespace NetvieWeb.Models
             {
                 MySqlCommand cmd = new MySqlCommand("GetPersonasPeliculas", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("idPeliculas", idPelicula);
+                cmd.Parameters.AddWithValue("Pelicula", idPelicula);
                 conn.Open();
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {

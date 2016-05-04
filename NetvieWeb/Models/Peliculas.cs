@@ -29,17 +29,19 @@ namespace NetvieWeb.Models
                             Duracion = dr.GetString(4),
                             Fecha = dr.GetDateTime(5),
                             Critica = dr.GetString(6),
-                            Imagen = dr.GetString(7),
-                            Url = dr.GetString(8),
+                            Estatus = dr.GetString(7),
+                            Imagen = dr.GetString(8),
+                            Url = dr.GetString(9),
+                            FechaInsercion = dr.GetDateTime(12),
                             Clasificacion = new Clasificacion()
                             {
-                                idClasificacion = dr.GetInt32(9),
-                                Nombre = dr.GetString(11)
+                                idClasificacion = dr.GetInt32(10),
+                                Nombre = dr.GetString(13)
                             },
                             Pais = new Pais()
                             {
-                                idPais = dr.GetInt32(10),
-                                Nombre = dr.GetString(12)
+                                idPais = dr.GetInt32(11),
+                                Nombre = dr.GetString(14)
                             },
                             Generos = (new Generos()).GetGeneros(dr.GetInt32(0)),
                             Personas = (new Personas()).GetPersonasPeliculas(dr.GetInt32(0))

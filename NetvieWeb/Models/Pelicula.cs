@@ -15,6 +15,7 @@ namespace NetvieWeb.Models
         public string Estatus { get; set; }
         public string Imagen { get; set; }
         public string Url { get; set; }
+        public DateTime FechaInsercion { get; set; }
         public Clasificacion Clasificacion { get; set; }
         public Pais Pais { get; set; }
         public Generos Generos { get; set; }
@@ -28,9 +29,9 @@ namespace NetvieWeb.Models
         {
             using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=netvie;Uid=root;Pwd=;"))
             {
-                MySqlCommand cmd = new MySqlCommand("GetGeneros", conn);
+                MySqlCommand cmd = new MySqlCommand("ShowMovie", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("idPeliculas", idPelicula);
+                cmd.Parameters.AddWithValue("pelicula", idPelicula);
                 conn.Open();
                 using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
@@ -43,19 +44,21 @@ namespace NetvieWeb.Models
                         this.Duracion = dr.GetString(4);
                         this.Fecha = dr.GetDateTime(5);
                         this.Critica = dr.GetString(6);
-                        this.Imagen = dr.GetString(7);
-                        this.Url = dr.GetString(8);
+                        this.Estatus = dr.GetString(7);
+                        this.Imagen = dr.GetString(8);
+                        this.Url = dr.GetString(9);
                         this.Clasificacion = new Clasificacion()
                         {
-                            idClasificacion = dr.GetInt32(9),
-                            Nombre = dr.GetString(11)
+                            idClasificacion = dr.GetInt32(10),
+                            Nombre = dr.GetString(12)
                         };
                         this.Pais = new Pais()
                         {
-                            idPais = dr.GetInt32(10),
-                            Nombre = dr.GetString(12)
+                            idPais = dr.GetInt32(11),
+                            Nombre = dr.GetString(13)
                         };
                         this.Generos = (new Generos()).GetGeneros(dr.GetInt32(0));
+                        this.Personas = (new Personas()).GetPersonasPeliculas(dr.GetInt32(0));
                     }
                 }
                 conn.Close();
